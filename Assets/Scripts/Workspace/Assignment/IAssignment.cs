@@ -12,58 +12,58 @@ namespace Assignment
         /// </summary>
         /// <param name="numbers"></param>
         public int[] LCT01_SelectionSortAscending(int[] numbers)
+{
+    for (int i = 0; i < numbers.Length - 1; i++)
+    {
+        int minIndex = i;
+
+        for (int j = i + 1; j < numbers.Length; j++)
         {
-            for (int i = 0; i < numbers.Length - 1; i++)
+            if (numbers[j] < numbers[minIndex])
             {
-                int minIndex = i;
-
-                for (int j = i + 1; j < numbers.Length; j++)
-                {
-                    (numbers[j] < numbers[minIndex])
-                    {
-                        minIndex = j;
-                    }   
-                }
-
-                int temp = numbers[i];
-                numbers[i] = numbers[minIndex];
-                numbers[minIndex] = temp;
+                minIndex = j;
             }
-
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                Debug.Log(numbers[i]);
-            }
-
-            return numbers;
         }
+
+        int temp = numbers[i];
+        numbers[i] = numbers[minIndex];
+        numbers[minIndex] = temp;
+    }
+
+    for (int i = 0; i < numbers.Length; i++)
+    {
+        Debug.Log(numbers[i]);
+    }
+
+    return numbers;
+}
 
         /// <summary>
         /// เรียงลำดับตัวเลขจากน้อยไปมากโดยใช้ Bubble Sort
         /// </summary>
         /// <param name="numbers"></param>
         public int[] LCT02_BubbleSortAscending(int[] numbers)
+{
+    for (int i = 0; i < numbers.Length - 1; i++)
+    {
+        for (int j = 0; j < numbers.Length - 1 - i; j++)
         {
-            (int i = 0; i < numbers.Length - 1; i++)
+            if (numbers[j] > numbers[j + 1])
             {
-                for (int j = 0; j < numbers.Length - 1 - i; j++)
-                {
-                    if (numbers[j] > numbers[j + 1])
-                    {
-                        int temp = numbers[j];
-                        numbers[j] = numbers[j + 1];
-                        numbers[j + 1] = temp;
-                    }
-                }
+                int temp = numbers[j];
+                numbers[j] = numbers[j + 1];
+                numbers[j + 1] = temp;
             }
-
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                .Log(numbers[i]);
-            }
-
-            return numbers;
         }
+    }
+
+    for (int i = 0; i < numbers.Length; i++)
+    {
+        Debug.Log(numbers[i]);
+    }
+
+    return numbers;
+}
 
         /// <summary>
         /// เรียงลำดับตัวเลขจากน้อยไปมากโดยใช้ Insertion Sort
@@ -191,8 +191,8 @@ namespace Assignment
         /// <param name="numbers"></param>
         public int AS04_FindTheSecondLargestNumber(int[] numbers)
 {
-    Array.Sort(numbers);
-    Array.Reverse(numbers);
+    System.Array.Sort(numbers);
+    System.Array.Reverse(numbers);
 
     int largest = numbers[0];
 
@@ -225,7 +225,7 @@ namespace Assignment
         /// <param name="numbers"></param>
         public int EX01_FindLongestConsecutiveSequence(int[] numbers)
 {
-    Array.Sort(numbers);
+    System.Array.Sort(numbers);
 
     int currentStreak = 1;
     int longestStreak = 1;
